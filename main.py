@@ -27,7 +27,7 @@ async def chaos_middleware(request: Request, call_next):
         
         # 1. Injeksi Latency / AI Timeout (2 - 5 detik)
         if random.random() < chaos_state["latency_chance"]:
-            delay = random.uniform(2.0, 5.0)
+            delay = random.uniform(1.0, 3.0)
             await asyncio.sleep(delay)
             
         # 2. Injeksi Service Interruption / Node Mati
